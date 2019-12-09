@@ -1,6 +1,59 @@
+<!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{$page.title} &mdash; {$config.site.title}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="hello@furqansiddiqui.com">
+    <meta name="keywords" content="bitcoin, bitcoin sandbox, bitcoind, bitcoin-lib">
+    <title>{$page.title} — {$config.site.title}</title>
+    <link href="{$page.root}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{$page.root}css/custom.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="{$page.root}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$page.root}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$page.root}favicon-16x16.png">
+    <link rel="manifest" href="{$page.root}site.webmanifest">
+    <link rel="mask-icon" href="{$page.root}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{$page.root}">{$config.site.title}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item{if $page.index.a === 1} active{/if}">
+                <a class="nav-link" href="{$page.root}">Home</a>
+            </li>
+            <li class="nav-item dropdown{if $page.index.a === 10} active{/if}">
+                <a class="nav-link dropdown-toggle" href="#" id="topNavTools" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Tools
+                </a>
+                <div class="dropdown-menu" aria-labelledby="topNavTools">
+                    <a class="dropdown-item{if $page.index.b === 20} active{/if}" href="{$page.root}wif">
+                        WIF (Wallet Import Format)
+                    </a>
+                    <a class="dropdown-item{if $page.index.b === 10} active{/if}" href="{$page.root}base58check">
+                        Base58Check Encode/Decode
+                    </a>
+                    <a class="dropdown-item{if $page.index.b === 20} active{/if}" href="{$page.root}var_int">
+                        Variable Integer (VarInt)
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item{if $page.index.b === 20} active{/if}"
+                       href="{$page.root}raw_transaction_decoder">
+                        Transaction Decoder
+                    </a>
+                    <a class="dropdown-item{if $page.index.b === 20} active{/if}" href="{$page.root}script">
+                        Script / OpCode
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+

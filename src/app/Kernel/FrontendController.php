@@ -6,6 +6,8 @@ namespace App\Kernel;
 use Comely\App\Http\Controllers\GenericHttpController;
 use Comely\Filesystem\Exception\PathNotExistException;
 use Comely\Knit\Knit;
+use Comely\Knit\Template;
+use FurqanSiddiqui\Bitcoin\Bitcoin;
 
 /**
  * Class FrontendController
@@ -61,6 +63,17 @@ abstract class FrontendController extends GenericHttpController
         }
 
         return $this->knit;
+    }
+
+    /**
+     * @param Template $template
+     * @throws \Comely\Knit\Exception\KnitException
+     * @throws \Comely\Knit\Exception\TemplateException
+     */
+    public function body(Template $template): void
+    {
+        $template->assign("bitcoin_lib", Bitcoin::VERSION);
+        parent::body($template);
     }
 
     /**

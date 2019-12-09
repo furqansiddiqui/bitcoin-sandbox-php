@@ -1,5 +1,23 @@
 {knit "header"}
-<h1>{$page.title}!</h1>
-<p>Your remote IP address is: <strong>{$remote.ipAddress}</strong></p>
-{$page|var_dump}
+<main role="main" class="container">
+    <div class="jumbotron">
+        <h1>Bitcoin Sandbox</h1>
+        <p class="lead">This app is a GUI for
+            <a href="https://github.com/furqansiddiqui/bitcoin-php"
+               target="_blank"><strong>furqansiddiqui/bitcoin-php</strong></a> lib for
+            developers who are either learning about Bitcoin protocol or working on projects that accept Bitcoin or
+            other altcoins.</p>
+        <a class="btn btn-lg btn-primary" href="#" role="button">Get Started &raquo;</a>
+    </div>
+</main>
+<div class="container">
+    <div class="row">
+        <h2>Tools</h2>
+        <ul>
+            <li>
+                <a href="{$page.root}var_int">Variable Integer</a>
+            </li>
+        </ul>
+    </div>
+</div>
 {knit "footer"}

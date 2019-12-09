@@ -17,4 +17,12 @@ class App extends \Comely\App\AppKernel
     public const DIR_COMPILER = 'tmp/knit';
     public const DIR_LOGS = 'tmp/logs';
     public const DIR_SESSIONS = 'tmp/sessions';
+
+    /**
+     * @return array
+     */
+    public function getNetworksList(): array
+    {
+        return \FurqanSiddiqui\Bitcoin\Networks\Networks::LIST;
+    }
 }
