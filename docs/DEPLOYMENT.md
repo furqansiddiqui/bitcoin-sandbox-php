@@ -2,23 +2,23 @@
 
 * Clone repository or un-compress a release archive:
 
-`git clone https://github.com/comely-io/starter-app`
+`git clone https://github.com/furqansiddiqui/bitcoin-sandbox-php`
 
 * Create temporary data directories:
 
-`cp -r starter-app/tmp_sample starter-app/tmp`
+`cp -r bitcoin-sandbox-php/tmp_sample bitcoin-sandbox-php/tmp`
 
 * Give appropriate permissions to temp data directories:
 
-`chmod -R 777 starter-app/tmp`
+`chmod -R 777 bitcoin-sandbox-php/tmp`
 
 * Delete unnecessary `tmp_sample` directory:
 
-`rm -rf starter-app/tmp_sample`
+`rm -rf bitcoin-sandbox-php/tmp_sample`
 
 * Go inside source directory:
 
-`cd starter-app/src`
+`cd bitcoin-sandbox-php/src`
 
 * Copy configuration files:
 

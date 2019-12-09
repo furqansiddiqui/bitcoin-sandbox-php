@@ -1,0 +1,59 @@
+
+# Default server block
+server {
+    listen 80;
+    listen [::]:80;
+    #listen 443;
+    #listen [::]:443;
+
+    #ssl_certificate /home/USER/bitcoin-sandbox-php/etc/ssl/CERTIFICATE.crt;
+    #ssl_certificate_key /home/USER/bitcoin-sandbox-php/etc/ssl/CERT_PRIVATE_KEY.key;
+
+    root /home/USER/bitcoin-sandbox-php/src/www/frontend;
+    index index.php index.html index.htm;
+
+    server_name SUB.DOMAIN.TLD;
+    if ($host != "SUB.DOMAIN.TLD") {
+        return 403;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ ^[\w\-\/]+$ {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    # Allowed PHP scripts
+    # Use "|" as separator within regex group below, i.e. to allow "phpinfo.php" modify it as (index|phpinfo)
+    location ~ ^/(index)\.php(/|$) {
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+        # Make sure this file does exists,
+        # Return 404 instead of "No input file specified." error message
+        try_files $fastcgi_script_name =404;
+
+        # Include fastcgi_params and set required SCRIPT_FILENAME explicitly
+        include fastcgi_params;
+        # Use $realpath_root instead of $document_root to resolve any symbolic links
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+
+        # Uncomment internal line below to disable /index.php/some/path type access
+        internal;
+    }
+
+    location ~ \.php$ {
+        # Disable all other PHP scripts
+        return 404;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    error_log /home/USER/bitcoin-sandbox-php/tmp/log/error.log;
+    #access_log /home/USER/bitcoin-sandbox-php/tmp/log/access.log;
+}

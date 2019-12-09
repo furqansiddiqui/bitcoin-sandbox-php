@@ -7,7 +7,6 @@ time_zone: "Europe/London"
 # Imports
 imports:
   - ../site.yml
-  - ../databases.yml
 
 # Services
 # Remove or comment-out any import entry to disable that service

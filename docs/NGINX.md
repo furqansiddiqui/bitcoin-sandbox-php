@@ -2,13 +2,17 @@
 
 * Open Nginx directory within this repository
 
-`cd ~/starter-app/etc/nginx`
+`cd ~/bitcoin-sandbox-php/etc/nginx`
 
-* Create/modify nginx files
+* Create/modify nginx file  
+
+`pico ~/bitcoin-sandbox-php/etc/nginx/bitcoin-sandbox.nginx`
+
+ *(Replace all `USER` with appropriate linux username)*  
 
 * Creating symbolic link (`SUDO` privileges required OR run as `root` user)
 
-`sudo ln -s ~/starter-app/etc/nginx/*.nginx /etc/nginx/sites-enabled`
+`sudo ln -s ~/bitcoin-sandbox-php/etc/nginx/bitcoin-sandbox.nginx /etc/nginx/sites-enabled`
 
 * Check nginx files
 

@@ -1,8 +1,8 @@
 # App Website Configuration
 site:
   # Project/website Title
-  title: "Untitled Project"
+  title: "Bitcoin Dev Sandbox | FurqanSiddiqui"
   # Domain name
-  domain: "domain.com"
+  domain: "bitcoin.furqansiddiqui.com"
   # Use HTTPS?
   https: yes

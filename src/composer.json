@@ -3,12 +3,13 @@
   "description": "Comely Starter App",
   "minimum-stability": "dev",
   "require": {
-    "php": ">=7.2.0",
+    "php-64bit": ">=7.2.0",
     "ext-bcmath": "*",
     "ext-json": "*",
     "ext-curl": "*",
     "ext-openssl": "*",
-    "comely-io/app-kernel": "^2019.192"
+    "comely-io/app-kernel": "^2019.310",
+    "furqansiddiqui/bitcoin-php": "dev-master"
   },
   "config": {
     "vendor-dir": "../vendor"
