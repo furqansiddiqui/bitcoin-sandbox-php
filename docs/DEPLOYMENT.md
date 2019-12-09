@@ -1,3 +1,8 @@
+## Prerequisites
+
+* PHP-64bit 7.2 or better
+* ext-bcmath, ext-gmp, ext-openssl
+
 ## Deployment Instructions
 
 * Clone repository or un-compress a release archive:
