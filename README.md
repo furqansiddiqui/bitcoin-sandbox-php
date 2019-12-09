@@ -15,7 +15,7 @@ This app is already deployed on:
 
 ### :globe_with_meridians: [https://bitcoin.furqansiddiqui.com](https://bitcoin.furqansiddiqui.com)
 
---
+---
 
 #### Can I deploy?
 
